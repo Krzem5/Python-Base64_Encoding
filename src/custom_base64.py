@@ -49,6 +49,5 @@ def decode(dt):
 		o.append((BASE64_ALPHABET.index(dt[i])<<2)|(idx1>>4))
 		o.append(((idx1&0xf)<<4)|(BASE64_ALPHABET.index(dt[i+2])>>2))
 	elif ((len(dt)&3)==2):
-		idx1=BASE64_ALPHABET.index(dt[i+1])
 		o.append((BASE64_ALPHABET.index(dt[i])<<2)|(BASE64_ALPHABET.index(dt[i+1])>>4))
 	return bytes(o)
